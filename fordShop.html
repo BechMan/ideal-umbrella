@@ -3,7 +3,6 @@
 	<head>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		<link rel="stylesheet" href="vuecss.css">
-		<script src="vuejs.js"></script>
 	</head>
 	<body>
 		<div class="container pt-5" id="app">
@@ -26,7 +25,7 @@
 							v-for="car in Vue.cars"
 							class="list-group-item list-group-item-action pointer"
 						>
-							{{ car.name }}
+							{{ car.name }} - {{ car.model }} 
 						</li>
 					</ul>
 				</div>
@@ -57,6 +56,6 @@
 		</div>
 
 		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
-		<script src="vuejs.js"></script>
+		<script src="VueScript.js"></script>
 	</body>
 </html>
