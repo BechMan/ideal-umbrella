@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="stylesheets.css">
+	<meta charset="UTF-8">
+	<title>Fly tickets</title>
+</head>
+<body>
+	<div id="app">
+		<div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+		    <div class="col-md-6 px-0">
+		        <h1 class="display-4 font-italic">Онлайн-табло</h1>
+		        <p class="lead my-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat sit doloremque mollitia quia quibusdam blanditiis distinctio eveniet eos.</p>
+		        <div class="input-group mb-3">
+				  <div class="custom-file">
+				    <input type="file" class="custom-file-input" id="inputGroupFile02">
+				    <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose file</label>
+				  </div>
+				  <div class="input-group-append">
+				    <span class="input-group-text" id="inputGroupFileAddon02">Upload</span>
+				  </div>
+				</div>
+		        <div class="btn-group" role="group" aria-label="Basic example">
+				    <button 
+				    	type="button" 
+				    	class="btn btn-secondary" 
+				    	v-on:click="departureButton"
+				    >Вылет</button>
+				    <button 
+				    	type="button" 
+				    	class="btn btn-secondary" 
+				    	v-on:click="allButton"
+				    >Все</button>
+				    <button 
+				    	type="button" 
+				    	class="btn btn-secondary" 
+				    	v-on:click="arrivalButton"
+				    >Прилёт</button>
+				</div>	
+				<button type="button" class="btn" v-bind:class="activeDifference" v-on:click="differenceButton">Задержанные рейсы</button>
+		    </div>
+		    <div class="input-group mb-3">
+			    <div class="input-group-prepend">
+			        <span class="input-group-text" id="inputGroup-sizing-default">Search</span>
+			    </div>
+			    <input 
+			  		type="text" 
+			  		class="form-control" 
+			  		aria-label="Sizing example input" 
+			  		aria-describedby="inputGroup-sizing-default"
+			  		v-model="search"
+			  	>
+			</div>
+	    </div>
+		<table class="table table-striped table-dark">
+			<thead>
+				<tr>
+					<th scope="col">
+						<abbr title="С учётом задержки">Время прибытия/отправления</abbr>
+						
+					</th>
+
+					<th scope="col">
+						№ рейса
+						
+					</th>
+
+					<th scope="col">
+						Направление
+						
+					</th>
+
+					<th scope="col">
+						Задержан на (мин.)
+						
+					</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				<tr
+					v-for="flight in filteredFlights"
+				>
+					<td>
+						{{ flight.dateOut.getHours() }}:{{ flight.dateOut.getMinutes() }}/{{ flight.dateIn.getHours() }}:{{ flight.dateIn.getMinutes() }}
+					</td>
+					<td>
+						{{ flight.number }}
+					</td>
+					<td>
+						{{ flight.direction }}
+					</td>
+					<td>
+						{{ flight.difference }}
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+
+
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>
