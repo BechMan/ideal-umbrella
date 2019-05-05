@@ -7,7 +7,10 @@ const flights = [
 	flight(new Date(2019, 04, 21, 04, 10, 00), new Date(2019, 04, 22, 14, 35, 00), 1515, "SU-2344", "Nowgorod"), 
 	flight(new Date(2019, 04, 21, 05, 40, 00), new Date(2019, 04, 21, 22, 00, 00), 0, "SU-274", "Piter-Burg"), 
 	flight(new Date(2019, 04, 21, 06, 15, 00), new Date(2019, 04, 22, 19, 10, 00), 80, "SU-2434", "Moscow"), 
-	flight(new Date(2019, 04, 21, 02, 15, 00), new Date(2019, 04, 21, 04, 10, 00), 0, "SU-94", "Moscow"),
+	flight(new Date(2019, 04, 21, 02, 15, 00), new Date(2019, 04, 21, 04, 10, 00), 0, "SU-94", "Moscow"), 
+	flight(new Date(2019, 04, 21, 11, 40, 00), new Date(2019, 04, 21, 15, 00, 00), 0, "SU-244", "Moscow"), 
+	flight(new Date(2019, 04, 21, 06, 15, 00), new Date(2019, 04, 22, 19, 10, 00), 80, "SU-2434", "Moscow"), 
+	flight(new Date(2019, 04, 23, 02, 15, 00), new Date(2019, 04, 24, 04, 10, 00), 0, "SU-94", "Dubai"),
 ];
 
 
